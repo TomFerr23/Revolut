@@ -18,9 +18,7 @@ $sql = "INSERT INTO user_entries (prefix, phone_number, email, password)
         VALUES ('$prefix', '$phone_number', '$email', '$password')";
 
 if ($conn->query($sql) === TRUE) {
-    // Redirect to another page after successful submission
-    header("Location: success.php");
-    exit;
+    echo "You have been fucked!";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
